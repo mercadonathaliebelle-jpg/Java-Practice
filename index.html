@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highlight Header & Footer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        header, footer {
+            font-family: 'Patrick Hand', cursive;
+        }
+
+        section {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<header id="pageHeader" style="background-color: rgb(211, 211, 211); padding: 15px;">
+    <h2>This is the Header</h2>
+</header>
+
+<section style="padding: 15px;">
+    <p>This is the main content section.</p>
+
+    <!-- Highlight buttons -->
+    <button onclick="document.getElementById('pageHeader').style.backgroundColor='rgb(164, 64, 204)'">
+        Highlight header
+    </button>
+
+    <button onclick="document.getElementById('pageFooter').style.backgroundColor='rgb(207, 47, 146)'">
+        Highlight footer
+    </button>
+
+    <button onclick="
+        document.getElementById('pageHeader').style.backgroundColor='rgb(211, 211, 211)';
+        document.getElementById('pageFooter').style.backgroundColor='rgb(211, 211, 211)';
+    ">
+        Clear highlight
+    </button>
+
+    <hr>
+
+    <!-- Day of the week -->
+    <h1>My First JavaScript</h1>
+
+    <button type="button" onclick="
+        document.getElementById('demo').innerHTML =
+        'Today is a ' +
+        ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][new Date().getDay()] +
+        '!';
+    ">
+        Click me to show the day
+    </button>
+
+    <p id="demo"></p>
+
+    <br>
+
+    <!-- Sum calculator -->
+    <input type="text" id="num1" placeholder="Enter first number">
+    <input type="text" id="num2" placeholder="Enter second number">
+
+    <br><br>
+
+    <button type="button" onclick="getSum()">Get sum</button>
+
+    <p id="sumResult"></p>
+</section>
+
+<footer id="pageFooter" style="background-color: rgb(211, 211, 211); padding: 15px;">
+    <p>This is the Footer</p>
+</footer>
+
+<script>
+function getSum() {
+    let a = Number(document.getElementById("num1").value);
+    let b = Number(document.getElementById("num2").value);
+    let sum = a + b;
+
+    document.getElementById("sumResult").innerHTML =
+        "The sum of " + a + " and " + b + " is " + sum + ".";
+}
+</script>
+
+</body>
+</html>
